@@ -58,3 +58,6 @@ Is on the same side as other
 ```rust 
 fn is_same_side(&self, other: &Side) -> bool
 ```
+
+### lic 
+`MIT`
