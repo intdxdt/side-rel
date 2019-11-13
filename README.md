@@ -1,6 +1,16 @@
 # Side-Rel
 Relative side relation for 2d geometric orientation
 
+### coverage 
+```bash 
+[INFO tarpaulin] Coverage Results:
+|| Uncovered Lines:
+|| Tested/Total Lines:
+|| src/lib.rs: 50/50
+|| 
+100.00% coverage, 50/50 lines covered
+```
+
 ### Relative relation 
  #### enum `IS`
 ```rust
@@ -17,10 +27,6 @@ New
 fn new() -> Side
 ```
 
-Get reference to relative orientation value
-```rust 
-fn value(&self) -> &Is
-```
 Is left
 ```rust 
 fn is_left(&self) -> bool

@@ -16,11 +16,6 @@ impl Side {
         Side { s: Is::On }
     }
 
-    ///Get reference to relative orientation value
-    pub fn value(&self) -> &Is {
-        &self.s
-    }
-
     ///Is left
     pub fn is_left(&self) -> bool {
         match self.s {
@@ -84,8 +79,33 @@ impl Side {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
+
     #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
+    fn sidedness() {
+        let mut s = Side::new();
+        assert!(s.as_on().is_on());
+
+        assert!(s.as_left().is_left());
+        assert!(s.is_on_or_left());
+        assert!(!s.as_left().is_on());
+
+        assert!(s.as_on().is_on());
+        assert!(s.is_on_or_right());
+        assert!(s.is_on_or_left());
+
+        assert!(s.as_right().is_right());
+        assert!(s.is_on_or_right());
+        assert!(!s.is_on());
+
+        let mut o = Side::new();
+        s.as_left();
+        o.as_left();
+
+        assert!(s.is_same_side(&o));
+        o.as_on();
+        assert!(!s.is_same_side(&o));
+        s.as_on();
+        assert!(s.is_same_side(&o));
     }
 }
