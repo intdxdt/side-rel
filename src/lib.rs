@@ -1,4 +1,5 @@
 ///Is - relative relation
+#[derive(Copy, Clone)]
 pub enum Is {
     Left,
     On,
@@ -6,6 +7,7 @@ pub enum Is {
 }
 
 ///Side Relation
+#[derive(Copy, Clone)]
 pub struct Side {
     s: Is
 }
