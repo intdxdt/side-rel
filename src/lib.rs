@@ -1,16 +1,10 @@
 ///Is - relative relation
 #[derive(Copy, Clone)]
-pub enum Is {
-    Left,
-    On,
-    Right,
-}
+pub enum Is { Left, On, Right }
 
 ///Side Relation
 #[derive(Copy, Clone)]
-pub struct Side {
-    s: Is
-}
+pub struct Side { s: Is }
 
 impl Side {
     ///New
